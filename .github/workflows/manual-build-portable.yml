@@ -18,11 +18,9 @@ on:
 
 jobs:
   build-windows-portable:
-    uses: janhq/jan/.github/workflows/template-tauri-build-windows-x64.yml@main
+    uses: ./.github/workflows/template-tauri-build-windows-x64-external.yml
     secrets: inherit
     with:
       ref: ${{ inputs.build_ref }}
-      public_provider: "none"
       channel: ${{ inputs.channel }}
       new_version: ${{ inputs.version }}
-      upload_url: ""
